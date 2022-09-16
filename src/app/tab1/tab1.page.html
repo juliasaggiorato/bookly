@@ -1,10 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title> BOOKLY </ion-title>
   </ion-toolbar>
 </ion-header>
+<style>
+  h1 {
+    size: 50px;
+    color: #afccff;
+  }
+</style>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -14,4 +18,17 @@
   </ion-header>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  <h1><ion-icon name="library"> </ion-icon></h1>
+
+  <ion-item>
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-button>Log In</ion-button>
+  <ion-button>Sign Up</ion-button>
 </ion-content>
