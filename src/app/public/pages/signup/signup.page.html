@@ -9,7 +9,6 @@
     color: #afccff;
   }
 </style>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -26,11 +25,20 @@
     <ion-input></ion-input>
   </ion-item>
   <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
     <ion-label position="floating">Contraseña</ion-label>
     <ion-input></ion-input>
   </ion-item>
-  <ion-button [routerLink]="['/homepage']" routerLinkActive="router-link-active"
-    >Log In</ion-button
-  >
+  <ion-item>
+    <ion-label position="floating">Repetir Contraseña</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Acepto los términos y condiciones</ion-label>
+  </ion-item>
   <ion-button>Sign Up</ion-button>
 </ion-content>
