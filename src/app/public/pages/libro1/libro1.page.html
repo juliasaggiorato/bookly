@@ -1,6 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-icon name="chevron-back"></ion-icon>
+    <ion-icon
+      name="chevron-back"
+      [routerLink]="['/homepage']"
+      routerLinkActive="router-link-active"
+    ></ion-icon>
 
     <ion-icon name="library"> </ion-icon>
   </ion-toolbar>
@@ -31,7 +35,7 @@
   <p>ISBN: 9780590353403</p>
   <p>{{libro.discripcion}}</p>
   <h3>Write a review</h3>
-  <div style="width: 500px; height: 100px; border: 1px solid#FFFFFF">
+  <div style="width: 500px; height: 100px; border: 1px solid black">
     My review
   </div>
   <button style="background-color: #3880ff">Post</button>

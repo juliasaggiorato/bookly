@@ -1,3 +1,53 @@
 ion-icon {
-  color: #afccff;
+  color: #488bff;
+}
+img {
+  width: 132px;
+  height: 199px;
+}
+h1 {
+  position: absolute;
+  width: 154px;
+  height: 38px;
+  left: 166px;
+  top: 79px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+h2 {
+  position: absolute;
+  width: 89px;
+  height: 16px;
+  left: 166px;
+  top: 119px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+
+  color: #666666;
+}
+
+p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+
+  color: #666666;
 }
