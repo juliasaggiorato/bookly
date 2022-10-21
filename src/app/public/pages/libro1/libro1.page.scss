@@ -149,3 +149,22 @@ p {
   left: 164px;
   top: 235px;
 }
+
+#publicar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 7px;
+  gap: 10px;
+  font-size: 7px;
+  position: absolute;
+  width: 35px;
+  height: 14px;
+  left: 302px;
+  top: 584px;
+
+  /* Primary */
+
+  background: #3880ff;
+  border-radius: 4px;
+}
