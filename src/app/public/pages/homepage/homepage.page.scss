@@ -1,3 +1,7 @@
+ion-content {
+  display: flex;
+}
+
 img {
   width: 85px;
   height: 130px;
@@ -12,6 +16,7 @@ img:hover {
 
 ion-icon {
   color: #488bff;
+  font-size: x-large;
 }
 
 ion-icon:hover {
@@ -19,10 +24,16 @@ ion-icon:hover {
   opacity: 0.4;
   filter: alpha(opacity=40);
 }
+h2 {
+  font-size: 20px;
+  margin-left: 10px;
+}
 div {
-  width: 343px;
-  height: 136px;
+  display: flex;
+  width: 400px;
+  height: 140px;
   left: 5px;
   top: 332px;
   overflow-x: scroll;
+  overflow-y: hidden;
 }

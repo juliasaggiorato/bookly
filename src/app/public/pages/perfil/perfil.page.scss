@@ -21,9 +21,19 @@ ion-icon:hover {
 }
 
 div {
+  display: flex;
   overflow-x: scroll;
 }
 
 #fotoperfil {
-  font-size: 120px;
+  font-size: 100px;
+}
+h3 {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+p {
+  padding-top: 18px;
+  padding-left: 5px;
 }
