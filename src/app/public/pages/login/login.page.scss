@@ -7,4 +7,15 @@ ion-icon {
 ion-content {
   text-align: center;
   margin: 10px;
+  flex: auto;
+  vertical-align: middle;
+}
+
+ion-label {
+  margin-top: 50px;
+}
+
+ion-button {
+  margin: 20px;
+  margin-top: 50px;
 }
