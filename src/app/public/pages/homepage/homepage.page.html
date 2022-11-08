@@ -15,16 +15,13 @@
 
   <ion-searchbar placeholder="Libro, Autor o ISBN"></ion-searchbar>
   <h2>Mis Libros</h2>
-  <div *ngIf="libros.length>0">
+  <div>
     <img
-    *ngFor="let libro of libros"
-      src={{libro.imagen}}
-      [routerLink]="['/libro',libro.id]"
+      src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/687803.jpg"
+      [routerLink]="['/libro/1']"
       routerLinkActive="router-link-active"
-      alt={{libro.titulo}}
     />
-    
-    <!-- <img
+    <img
       src="https://http2.mlstatic.com/D_NQ_NP_777944-MLA42065333968_062020-O.jpg "
       [routerLink]="['/libro/3']"
       routerLinkActive="router-link-active"
@@ -48,7 +45,7 @@
       src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/695034.jpg"
       [routerLink]="['/libro/11']"
       routerLinkActive="router-link-active"
-    /> -->
+    />
   </div>
 
   <h2>Fantasía</h2>
