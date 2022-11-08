@@ -4,13 +4,14 @@ ion-icon {
 img {
   width: 132px;
   height: 199px;
+  margin: 15px;
 }
 h1 {
   position: absolute;
   width: 154px;
   height: 38px;
   left: 166px;
-  top: 55px;
+  top: 69px;
 
   font-family: "Roboto";
   font-style: normal;
@@ -28,7 +29,7 @@ h2 {
   width: 89px;
   height: 16px;
   left: 166px;
-  top: 102px;
+  top: 115px;
 
   font-family: "Roboto";
   font-style: normal;
@@ -56,7 +57,7 @@ p {
   width: 78px;
   height: 14px;
   left: 167px;
-  top: 145px;
+  top: 155px;
 }
 
 #rating {
@@ -64,7 +65,7 @@ p {
   width: 21px;
   height: 12px;
   left: 239px;
-  top: 138px;
+  top: 148px;
 
   font-family: "Roboto";
   font-style: normal;
@@ -83,7 +84,7 @@ p {
   width: 70px;
   height: 14px;
   left: 167px;
-  top: 158px;
+  top: 165px;
 
   font-family: "Roboto";
   font-style: normal;
@@ -102,7 +103,7 @@ p {
   width: 133px;
   height: 14px;
   left: 167px;
-  top: 180px;
+  top: 190px;
 
   font-family: "Roboto";
   font-style: normal;
@@ -121,7 +122,7 @@ p {
   width: 121px;
   height: 14px;
   left: 167px;
-  top: 202px;
+  top: 215px;
 
   font-family: "Roboto";
   font-style: normal;
@@ -147,24 +148,34 @@ p {
   width: 150px;
   height: 33px;
   left: 164px;
-  top: 235px;
+  top: 250px;
 }
 
 #publicar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 7px;
-  gap: 10px;
-  font-size: 7px;
+  font-size: 8px;
   position: absolute;
-  width: 35px;
-  height: 14px;
-  left: 302px;
+  width: 50px;
+  height: 23px;
+  left: 292px;
   top: 584px;
 
   /* Primary */
 
   background: #3880ff;
   border-radius: 4px;
+}
+
+#descripcion {
+  margin: 10px;
+}
+
+#review {
+  width: 340px;
+  height: 100px;
+  border: 1px solid #666666;
+  border-radius: 4px;
+  margin: 5px;
 }

@@ -22,23 +22,25 @@
     src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/687803.jpg"
   />
   <h1>{{libro.titulo}}</h1>
-  <h2>Sarah J Mass</h2>
+  <h2>{{libro.autor}}</h2>
   <div id="estrellas">
     <ion-icon name="star"></ion-icon>
     <ion-icon name="star"></ion-icon>
     <ion-icon name="star"></ion-icon>
     <ion-icon name="star"></ion-icon>
   </div>
-
-  <p id="rating">(4.1)</p>
-  <p id="pags">Páginas: 456</p>
-  <p id="publicacion">Publicación: 01/05/2015</p>
-  <p id="isbn">ISBN: 9780590353403</p>
-  <ion-button id="agg">Agregar a mis libros</ion-button>
-  <p>{{libro.discripcion}}</p>
-  <h4>Write a review</h4>
-  <div style="width: 500px; height: 100px; border: 1px solid black">
-    My review
+  <div id="info">
+    <p id="rating">(4.1)</p>
+    <p id="pags">Páginas: {{libro.paginas}}</p>
+    <p id="publicacion">Publicación: {{libro.fechaPublicacion}}</p>
+    <p id="isbn">ISBN: {{libro.isbn}}</p>
+    <ion-button id="agg">Agregar a mis libros</ion-button>
   </div>
-  <ion-button id="publicar">Publicar</ion-button>
+
+  <p id="descripcion">{{libro.descripcion}}</p>
+  <h4>Write a review</h4>
+  <div id="review">
+    My review
+    <ion-button id="publicar">Publicar</ion-button>
+  </div>
 </ion-content>
