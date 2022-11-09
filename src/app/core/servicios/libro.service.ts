@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class LibroService {
-
-  constructor() { }
+export class LibrosService {
+  constructor() {}
+  async getLibros() {
+    const res = await fetch('http://localhost:8080/libro');
+    const resjson = (await res).json();
+    return resjson;
+  }
 }
