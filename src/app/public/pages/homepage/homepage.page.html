@@ -16,9 +16,12 @@
 
   <ion-searchbar placeholder="Libro, Autor o ISBN"></ion-searchbar>
   <h2>Mis Libros</h2>
-  <div *ngIf="libros.length>0">
+   <!--
+  <div *ngIf="librosRomance.length>0">
+   /> -->
+   <div>
     <img
-      *ngFor="let libro of libros"
+      *ngFor="let libro of librosRomance"
       src="{{libro.imagen}}"
       [routerLink]="['/libro',libro.id]"
       routerLinkActive="router-link-active"
