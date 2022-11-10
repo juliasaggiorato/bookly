@@ -25,6 +25,15 @@
   </div>
 
   <h3>Mis Libros</h3>
+   <div *ngIf="libros.length>0">
+    <img
+      *ngFor="let libro of libros"
+      src="{{libro.imagen}}"
+      [routerLink]="['/libro',libro.id]"
+      routerLinkActive="router-link-active"
+      alt="{{libro.titulo}}"
+    />
+
   <div>
     <img
       src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/687803.jpg"

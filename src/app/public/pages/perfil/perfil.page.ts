@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
+/* 
+export class PerfilPage implements OnInit {
+  constructor(private librosService: LibrosService) {}
+  misLibros = [];
+  ngOnInit() {
+    this.getLibros();
+  }
+  async getLibros() {
+    this.misLibros = await *ngIf= "libros.milibro=1" this.librosService.getLibros();
+    console.log(this.misLibros);
+  }
+}
+*/
