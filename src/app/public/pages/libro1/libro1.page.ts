@@ -15,7 +15,20 @@ constructor(
     private librosService: LibrosService
     ){ }
 libros=[];
-libro: Libro;
+libro: Libro = {
+  id: 0,
+  autor: '',
+  fechaPublicacion:new Date() ,
+  genero: '',
+  isbn: '',
+  paginas: 0,
+  rating: 0,
+  review:'',
+  titulo:'',
+  descripcion:'',
+  imagen: '',
+  milibro: false 
+}
 public libroId: number;
 
   ngOnInit() {
