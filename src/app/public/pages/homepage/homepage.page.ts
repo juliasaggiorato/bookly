@@ -9,8 +9,15 @@ import { LibrosService } from 'src/app/core/servicios/libros.service';
 export class HomepagePage implements OnInit {
   constructor(private librosService: LibrosService) {}
   libros = [];
-  librosRomance: libro = [];
+  librosRomance = [];
   librosAutoayuda = [];
+  librosFantasia = [];
+  librosDistopia = [];
+  librosNinos = [];
+  librosClasicos = [];
+  librosMisLibros = []; 
+  
+
   ngOnInit() {
     this.getLibros();
     
@@ -20,6 +27,11 @@ export class HomepagePage implements OnInit {
     console.log(this.libros);
     this.librosRomance =  this.getLibrosGenero("Romance");
     this.librosAutoayuda =  this.getLibrosGenero("Autoayuda");
+    this.librosFantasia = this.getLibrosGenero("Fantasía");
+    this.librosDistopia = this.getLibrosGenero("Distopía");
+    this.librosNinos = this.getLibrosGenero("Niños");
+    this.librosClasicos = this.getLibrosGenero("Clásicos");
+    this.librosMisLibros = this.getLibrosMisLibros();
   }
 
   getLibrosGenero(genero : string){
@@ -27,6 +39,11 @@ export class HomepagePage implements OnInit {
   
 
 }
+getLibrosMisLibros()
+{
+  return this.libros.filter((libro)=>libro.milibro === true);
+}
 
 }
+
             

@@ -16,245 +16,78 @@
 
   <ion-searchbar placeholder="Libro, Autor o ISBN"></ion-searchbar>
   <h2>Mis Libros</h2>
-   <!--
-  <div *ngIf="librosRomance.length>0">
-   /> -->
    <div>
     <img
-      *ngFor="let libro of librosRomance"
+      *ngFor="let libro of librosMisLibros"
       src="{{libro.imagen}}"
       [routerLink]="['/libro',libro.id]"
       routerLinkActive="router-link-active"
       alt="{{libro.titulo}}"
     />
-    <!--
-    <img
-      src="https://http2.mlstatic.com/D_NQ_NP_777944-MLA42065333968_062020-O.jpg "
-      [routerLink]="['/libro/3']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://upload.wikimedia.org/wikipedia/en/f/f4/Divergent_%28book%29_by_Veronica_Roth_US_Hardcover_2011.jpg"
-      [routerLink]="['/libro/15']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://http2.mlstatic.com/D_NQ_NP_688424-MLA50334554666_062022-O.jpg"
-      [routerLink]="['/libro/25']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://m.media-amazon.com/images/I/41ZlIu3dqCL._AC_SY780_.jpg"
-      [routerLink]="['/libro/9']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/695034.jpg"
-      [routerLink]="['/libro/11']"
-      routerLinkActive="router-link-active"
-    />
-    /> -->
   </div>
 
   <h2>Fantasía</h2>
   <div>
     <img
-      src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/687803.jpg"
-      [routerLink]="['/libro/1']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/598588.jpg"
-      [routerLink]="['/libro/2']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://http2.mlstatic.com/D_NQ_NP_777944-MLA42065333968_062020-O.jpg"
-      [routerLink]="['/libro/3']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://images.cdn3.buscalibre.com/fit-in/360x360/56/2f/562f405fdfc7fc851473b84e07b07125.jpg"
-      [routerLink]="['/libro/4']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://images.cdn2.buscalibre.com/fit-in/360x360/69/e8/69e8321769b9bc45f93d615d00cb54be.jpg"
-      [routerLink]="['/libro/5']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://www.editorialhidra.com/media/hidra/images/edition-75665.jpg"
-      [routerLink]="['/libro/6']"
-      routerLinkActive="router-link-active"
-    />
+    *ngFor="let libro of librosFantasia"
+    src="{{libro.imagen}}"
+    [routerLink]="['/libro',libro.id]"
+    routerLinkActive="router-link-active"
+    alt="{{libro.titulo}}"
+  />
   </div>
 
   <h2>Romance</h2>
   <div>
     <img
-      src="https://images.cdn1.buscalibre.com/fit-in/360x360/92/eb/92eb38caa11f2f34386c5cf7e735a049.jpg"
-      [routerLink]="['/libro/7']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1618913179l/54985743.jpg"
-      [routerLink]="['/libro/8']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://m.media-amazon.com/images/I/41ZlIu3dqCL._AC_SY780_.jpg"
-      [routerLink]="['/libro/9']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://m.media-amazon.com/images/I/51zXWBd+5sL._AC_SY780_.jpg"
-      [routerLink]="['/libro/10']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/695034.jpg"
-      [routerLink]="['/libro/11']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://images.cdn3.buscalibre.com/fit-in/360x360/07/dd/07ddddf79e312c731c3cfc7c18d7c8c3.jpg"
-      [routerLink]="['/libro/12']"
-      routerLinkActive="router-link-active"
-    />
+    *ngFor="let libro of librosRomance"
+    src="{{libro.imagen}}"
+    [routerLink]="['/libro',libro.id]"
+    routerLinkActive="router-link-active"
+    alt="{{libro.titulo}}"
+  />
   </div>
 
   <h2>Distopías</h2>
   <div>
     <img
-      src="https://m.media-amazon.com/images/I/513DK4WQymL.jpg"
-      [routerLink]="['/libro/13']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://contentv2.tap-commerce.com/cover/large/9789876129275_1.jpg?id_com=1113"
-      [routerLink]="['/libro/14']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://upload.wikimedia.org/wikipedia/en/f/f4/Divergent_%28book%29_by_Veronica_Roth_US_Hardcover_2011.jpg"
-      [routerLink]="['/libro/15']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://pastoralsj.org/images/stories/flexicontent/item_473_field_39/original/juegos2.jpg"
-      [routerLink]="['/libro/16']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://contentv2.tap-commerce.com/cover/large/9789876122672_1.jpg?id_com=1113"
-      [routerLink]="['/libro/17']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://images.cdn1.buscalibre.com/fit-in/360x360/2d/b6/2db6786071eee8dd0fc892b149e8ff34.jpg"
-      [routerLink]="['/libro/18']"
-      routerLinkActive="router-link-active"
-    />
+    *ngFor="let libro of librosDistopia"
+    src="{{libro.imagen}}"
+    [routerLink]="['/libro',libro.id]"
+    routerLinkActive="router-link-active"
+    alt="{{libro.titulo}}"
+  />
   </div>
   <h2>Niños</h2>
   <div>
     <img
-      src="https://images.cdn2.buscalibre.com/fit-in/360x360/7f/7c/7f7c742a479491d32b9217cc8bbeb434.jpg"
-      [routerLink]="['/libro/19']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://contentv2.tap-commerce.com/cover/large/9789877381290_1.jpg?id_com=1113"
-      [routerLink]="['/libro/20']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://narrativabreve.com/wp-content/uploads/2019/08/cuentos-clasicos-para-antes-de-dormir.jpg"
-      [routerLink]="['/libro/21']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://images.cdn1.buscalibre.com/fit-in/360x360/41/0d/410df74bd7bd6ff8f7cf5b8960ee01b8.jpg"
-      [routerLink]="['/libro/22']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://m.media-amazon.com/images/I/518-WN-7U+L.jpg"
-      [routerLink]="['/libro/23']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://http2.mlstatic.com/D_NQ_NP_945124-MLA48139958215_112021-O.jpg"
-      [routerLink]="['/libro/24']"
-      routerLinkActive="router-link-active"
-    />
+    *ngFor="let libro of librosNinos"
+    src="{{libro.imagen}}"
+    [routerLink]="['/libro',libro.id]"
+    routerLinkActive="router-link-active"
+    alt="{{libro.titulo}}"
+  />
   </div>
 
   <h2>Autoayuda</h2>
   <div>
     <img
-      src="https://http2.mlstatic.com/D_NQ_NP_688424-MLA50334554666_062022-O.jpg"
-      [routerLink]="['/libro/25']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547189796l/37570546.jpg"
-      [routerLink]="['/libro/26']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566872427l/49228706._SX0_SY0_.jpg"
-      [routerLink]="['/libro/27']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/552131.jpg"
-      [routerLink]="['/libro/28']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://http2.mlstatic.com/D_NQ_NP_608941-MLA26904490549_022018-O.jpg"
-      [routerLink]="['/libro/29']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://m.media-amazon.com/images/I/51mN3bY0JjL.jpg"
-      [routerLink]="['/libro/30']"
-      routerLinkActive="router-link-active"
-    />
+    *ngFor="let libro of librosAutoayuda"
+    src="{{libro.imagen}}"
+    [routerLink]="['/libro',libro.id]"
+    routerLinkActive="router-link-active"
+    alt="{{libro.titulo}}"
+  />
   </div>
+
   <h2>Clasicos</h2>
   <div>
     <img
-      src="https://www.veintitres.com.ar/export/sites/cronica/img/2021/12/13/portada.jpeg_373710161.jpeg"
-      [routerLink]="['/libro/31']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://global-uploads.webflow.com/6034d7d1f3e0f52c50b2adee/625452ebb0e15e764981b44c_6034d7d1f3e0f55fcab2b2de_Orgullo-y-prejuicio-jane-austen-editorial-alma.jpeg"
-      [routerLink]="['/libro/32']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://images.cdn1.buscalibre.com/fit-in/360x360/84/5c/845c6b9eb6626eebe12fdf963414db2b.jpg"
-      [routerLink]="['/libro/33']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://contentv2.tap-commerce.com/cover/large/9789878000978_1.jpg?id_com=1113"
-      [routerLink]="['/libro/34']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://www.loqueleo.com/do/uploads/2021/08/resized/600_portada-la-odisea.jpg"
-      [routerLink]="['/libro/35']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://global-uploads.webflow.com/6034d7d1f3e0f52c50b2adee/625452f1b0e15e10d081b686_6034d7d1f3e0f51171b2b2f1_Romeo-y-julieta-william-shakespeare-editorial-alma.jpeg"
-      [routerLink]="['/libro/36']"
-      routerLinkActive="router-link-active"
-    />
+    *ngFor="let libro of librosClasicos"
+    src="{{libro.imagen}}"
+    [routerLink]="['/libro',libro.id]"
+    routerLinkActive="router-link-active"
+    alt="{{libro.titulo}}"
+  />
   </div>
 </ion-content>
