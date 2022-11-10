@@ -30,7 +30,7 @@
     <ion-icon name="star"></ion-icon>
   </div>
   <div id="info">
-    <p id="rating">(4.1)</p>
+    <p id="rating">{{libro.rating}}</p>
     <p id="pags">Páginas: {{libro.paginas}}</p>
     <p id="publicacion">Publicación: {{libro.fechaPublicacion}}</p>
     <p id="isbn">ISBN: {{libro.isbn}}</p>
@@ -40,7 +40,7 @@
   <p id="descripcion">{{libro.descripcion}}</p>
   <h4>Write a review</h4>
   <div id="review">
-    My review
+    {{libro.review}}
     <ion-button id="publicar">Publicar</ion-button>
   </div>
 </ion-content>

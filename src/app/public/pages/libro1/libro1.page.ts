@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class Libro1Page implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   libro = {
     id: 1,
@@ -19,8 +21,25 @@ export class Libro1Page implements OnInit {
     fechaPublicacion: '01/05/2015',
     rating: 4.1,
     genero: 'fantasía',
-    misLibros: true,
+    milibro: true,
     descripcion:
       'Feyre está desesperada, su vida y la de su familia dependen de ella.    Enfrentada al hambre más absoluto, no dudará en ir al bosque prohibido y    matar si es necesario. Pero su osadía la convierte en prisionera del    misterioso Tamlin, quien a pesar de su aparente frialdad la hará descubrir    una ardiente pasión que marcará su destino. Lejos de su familia y su mundo,    Feyre tendrá que tomar una decisión capital para salvar todo lo que ama.',
   };
+}
+
+
+export interface libro{
+  id: number;
+  autor: string;
+  fechaPublicacion: Date;
+  genero: string;
+  isbn: number;
+  paginas: number;
+  rating: number;
+  review:string;
+  titulo:string;
+  descripcion:string;
+  imagen: string;
+  milibro: boolean;   
+
 }
