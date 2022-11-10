@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LibrosService } from 'src/app/core/services/libros.service';
+import { LibrosService } from 'src/app/core/servicios/libro.service';
 
 @Component({
   selector: 'app-homepage',
