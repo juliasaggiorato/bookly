@@ -11,10 +11,4 @@ export class LibrosService {
     return resjson;
   }
 
-  getInfoLibroPorId(id:number) {
-    return this.getLibros.filter((libro) => {
-      
-    })
-}
-*/
 }
