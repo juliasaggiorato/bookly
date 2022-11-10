@@ -10,4 +10,11 @@ export class LibrosService {
     const resjson = (await res).json();
     return resjson;
   }
+
+  getInfoLibroPorId(id:number) {
+    return this.getLibros.filter((libro) => {
+      
+    })
+}
+*/
 }

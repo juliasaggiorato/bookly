@@ -25,78 +25,11 @@
   </div>
 
   <h3>Mis Libros</h3>
-   <div *ngIf="libros.length>0">
+   <div>
     <img
-      *ngFor="let libro of libros"
+      *ngFor="let libro of librosMisLibros"
       src="{{libro.imagen}}"
-      [routerLink]="['/libro',libro.id]"
-      routerLinkActive="router-link-active"
       alt="{{libro.titulo}}"
-    />
-
-  <div>
-    <img
-      src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/687803.jpg"
-      [routerLink]="['/libro/1']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://http2.mlstatic.com/D_NQ_NP_777944-MLA42065333968_062020-O.jpg "
-      [routerLink]="['/libro/3']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://upload.wikimedia.org/wikipedia/en/f/f4/Divergent_%28book%29_by_Veronica_Roth_US_Hardcover_2011.jpg"
-      [routerLink]="['/libro/15']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://http2.mlstatic.com/D_NQ_NP_688424-MLA50334554666_062022-O.jpg"
-      [routerLink]="['/libro/25']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://m.media-amazon.com/images/I/41ZlIu3dqCL._AC_SY780_.jpg"
-      [routerLink]="['/libro/9']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://www.tematika.com/media/catalog/Ilhsa/Imagenes/695034.jpg"
-      [routerLink]="['/libro/11']"
-      routerLinkActive="router-link-active"
-    />
-  </div>
-  <h3>Quiero Leer</h3>
-  <div>
-    <img
-      src="https://images.cdn3.buscalibre.com/fit-in/360x360/07/dd/07ddddf79e312c731c3cfc7c18d7c8c3.jpg"
-      [routerLink]="['/libro/12']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://http2.mlstatic.com/D_NQ_NP_945124-MLA48139958215_112021-O.jpg"
-      [routerLink]="['/libro/24']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566872427l/49228706._SX0_SY0_.jpg"
-      [routerLink]="['/libro/27']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://www.veintitres.com.ar/export/sites/cronica/img/2021/12/13/portada.jpeg_373710161.jpeg"
-      [routerLink]="['/libro/31']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://m.media-amazon.com/images/I/51mN3bY0JjL.jpg"
-      [routerLink]="['/libro/30']"
-      routerLinkActive="router-link-active"
-    />
-    <img
-      src="https://images.cdn3.buscalibre.com/fit-in/360x360/56/2f/562f405fdfc7fc851473b84e07b07125.jpg"
-      [routerLink]="['/libro/4']"
-      routerLinkActive="router-link-active"
     />
   </div>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibrosService } from 'src/app/core/servicios/libros.service';
 
 @Component({
   selector: 'app-perfil',
@@ -6,11 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-  constructor() {}
+  constructor(private librosService: LibrosService) {}
+libros=[];
+  librosMisLibros = []; 
+  
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.getLibros();
+    
+  }
+  async getLibros() {
+    this.libros = await this.librosService.getLibros();
+    console.log(this.libros);
+    this.librosMisLibros =  this.getLibrosMisLibros();
 
   }
+  getLibrosMisLibros()
+{
+  return this.libros.filter((libro)=>libro.milibro === true);
+}
 
-
+}

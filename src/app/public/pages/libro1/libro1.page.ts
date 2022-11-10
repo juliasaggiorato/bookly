@@ -1,39 +1,70 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+
+import { LibrosService } from 'src/app/core/servicios/libros.service';
 
 @Component({
   selector: 'app-libro1',
   templateUrl: './libro1.page.html',
   styleUrls: ['./libro1.page.scss'],
 })
+
 export class Libro1Page implements OnInit {
-  constructor() {}
+libros: [];
+ // id: string;
+
+//  this.id = ActivatedRouteSnapshot.url;
+constructor(
+    private activatedRoute: ActivatedRoute,
+    private librosService: LibrosService
+    ){ }
+public libroId: number;
+//public libroInfo: infoLibro;
 
   ngOnInit() {
+    
+    //this.getLibros()[this.id];
+    this.activatedRoute.params.subscribe(params =>{
+     this.libroId = params['id'];
+     console.log(this.libroId);
+    }
+    )
+  }}
+    /* this.libroId = params['id'];//obtiene el id de la url
+      let libro =
+      this.librosService.getInfoLibroPorId(this.libroId);
+      if (libro.length > 0) {
+        this.libroInfo = libro[0];
+      }
+    });
+    }
 
+
+   async getLibros() {
+    this.libros = await this.librosService.getLibros();
+    console.log(this.libros);
+    //this.getid();
+   // this.getInfoLibro(this.id);
   }
 
-  libro = {
-    id: 1,
-    titulo: 'Una Corte de Rosas y Espinas',
-    autor: 'Sarah J Mass',
-    paginas: 459,
-    isbn: 9780590353403,
-    fechaPublicacion: '01/05/2015',
-    rating: 4.1,
-    genero: 'fantasía',
-    milibro: true,
-    descripcion:
-      'Feyre está desesperada, su vida y la de su familia dependen de ella.    Enfrentada al hambre más absoluto, no dudará en ir al bosque prohibido y    matar si es necesario. Pero su osadía la convierte en prisionera del    misterioso Tamlin, quien a pesar de su aparente frialdad la hará descubrir    una ardiente pasión que marcará su destino. Lejos de su familia y su mundo,    Feyre tendrá que tomar una decisión capital para salvar todo lo que ama.',
-  };
+
+  getInfoLibro(libroId): infoLibro{
+  
+  return this.libros[id];
+  
+
 }
 
 
-export interface libro{
+}
+
+export interface infoLibro{
   id: number;
   autor: string;
   fechaPublicacion: Date;
   genero: string;
-  isbn: number;
+  isbn: string;
   paginas: number;
   rating: number;
   review:string;
@@ -43,3 +74,4 @@ export interface libro{
   milibro: boolean;   
 
 }
+*/
