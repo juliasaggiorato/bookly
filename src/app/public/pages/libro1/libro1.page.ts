@@ -30,6 +30,7 @@ libro: Libro = {
   milibro: false 
 }
 public libroId: number;
+estrellas:any[] = [];
 
   ngOnInit() {
     this.getLibroPorId();
@@ -41,7 +42,9 @@ public libroId: number;
      this.libroId = params['id'];
     }
     )
-      this.libro = this.libros[this.libroId -1];
+      this.libro = this.libros.find((libro:Libro) => libro.id == this.libroId);
+      this.estrellas = new Array(Math.round(this.libro.rating))
+      console.log(this.libro,this.estrellas)
     }
    
   }
