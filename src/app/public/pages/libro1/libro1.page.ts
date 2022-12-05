@@ -31,6 +31,8 @@ libro: Libro = {
 }
 public libroId: number;
 estrellas:any[] = [];
+textoBoton='';
+
 
   ngOnInit() {
     this.getLibroPorId();
@@ -45,6 +47,16 @@ estrellas:any[] = [];
       this.libro = this.libros.find((libro:Libro) => libro.id == this.libroId);
       this.estrellas = new Array(Math.round(this.libro.rating))
       console.log(this.libro,this.estrellas)
+
+      if (this.libro.milibro) {
+      this.textoBoton = "Ya agregado";
+      } else {
+        this.textoBoton = "Agregar a mis libros";
+      }
+
+      
+
+
     }
    
   }
