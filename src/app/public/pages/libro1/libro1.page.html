@@ -42,25 +42,40 @@
   <p id="descripcion">{{libro.descripcion}}</p>
   <h4>Escribe tu review</h4>
   <div id="review">
-    {{libro.review}}
-    <ion-button id="publicar">Publicar</ion-button>
+    
+    <div> 
+      <ion-card 
+      *ngFor="let usuario of usuarios"
+      style="position:relative; top:20px">
+      <ion-card-header>
+        <ion-card-subtitle style="color:black">{{usuario.email}}</ion-card-subtitle>
+        &nbsp;
+        <ion-card-subtitle style="color:grey">{{usuario.nombre}}</ion-card-subtitle>
+      </ion-card-header>  
+      <ion-card-content>
+        
+        </ion-card-content>
+      </ion-card>
+      
+    </div>
+
+ 
   
+  
+  <div>
+    <form [formGroup]="form" (submit)="enviarData()">
+      <div class="form-group">
+        <div for="commentArea"></div>
+      <textarea formControlName="textAreaComentario" class="text-comment" id="commentArea" rows="8"></textarea>
+      </div>
+      <div>
+        <ion-button fill="clear" color="medium" (click)="enviarData()"> Enviar </ion-button>
+      </div>
+    </form>
   </div>
-  
-<!-- 
-  <h5>Otras reviews</h5>
-    <ion-icon id="fotoperfil" name="person-circle-outline"></ion-icon>
-    <h6>
-      Julieta rated it 
-    </h6>
-    <ion-icon name="star"></ion-icon>
-    <ion-icon name="star"></ion-icon>
-    <ion-icon name="star"></ion-icon>
-    <p>(3)</p>
--->
-
 
   
+
   
-  
+
 </ion-content>
