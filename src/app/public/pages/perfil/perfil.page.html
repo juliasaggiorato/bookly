@@ -26,10 +26,12 @@
   </div>
 
   <h3>Mis Libros</h3>
-   <div>
+  <div>
     <img
       *ngFor="let libro of librosMisLibros"
       src="{{libro.imagen}}"
+      [routerLink]="['/libro',libro.id]"
+      routerLinkActive="router-link-active"
       alt="{{libro.titulo}}"
     />
   </div>
