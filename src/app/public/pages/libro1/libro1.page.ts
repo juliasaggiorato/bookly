@@ -4,6 +4,7 @@ import { LibrosService } from 'src/app/core/servicios/libros.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ReviewService } from 'src/app/core/servicios/review.service';
 import { DatePipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-libro1',
@@ -16,13 +17,15 @@ export class Libro1Page implements OnInit {
   comentarioText: string;
   public form: FormGroup;
   formBuilder: any;
+  public colorBoton: any = {};
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private librosService: LibrosService,
     private fb: FormBuilder,
     private ReviewService: ReviewService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private http: HttpClient
   ) {}
 
   libros = [];
@@ -43,22 +46,16 @@ export class Libro1Page implements OnInit {
     imagen: '',
     milibro: false,
   };
+
   public libroId: number;
   public formattedDate;
   estrellas: any[] = [];
-  textoBoton = '';
+  public textoBoton = '';
   date: Date = this.libro.fechaPublicacion;
 
   ngOnInit() {
     this.getLibroPorId();
-    this.cambiarBoton();
     this.cambiarFormatoFecha();
-    /*this.enviarData();
-    this.form = this.formBuilder.group({
-      textAreaComentario: [''],
-    
-    });
-    */
   }
 
   async getLibroPorId() {
@@ -67,35 +64,32 @@ export class Libro1Page implements OnInit {
       this.libroId = params['id'];
     });
     this.libro = this.libros.find((libro: Libro) => libro.id == this.libroId);
+    // muestra la cantidad de estrellas correspondientes segun el rating que saca de la base de datos
     this.estrellas = new Array(Math.round(this.libro.rating));
-    console.log(this.libro, this.estrellas);
-  }
-
-  public cambiarBoton() {
+    //cambia el boton segun la info que obtiene de la base de datos
     if (this.libro.milibro) {
-      this.textoBoton = 'Ya agregado';
+      this.textoBoton = 'Ya agregado ✓';
+      this.colorBoton = { 'background-color': '#FFFFFF', color: '#488bff' };
     } else {
       this.textoBoton = 'Agregar a mis libros';
+      this.colorBoton = { 'background-color': '#488bff', color: '#ffffff' };
     }
   }
 
-  public cambiarFormatoFecha() {
+  public cambiarFormatoFecha(): void {
     this.formattedDate = this.datePipe.transform(this.date, 'MM/dd/yyyy');
   }
 
-  /*
-  public enviarData() {
-    this.ReviewService.post('http://localhost:8080/libro', {
-      email: 'Lautaro Viceconti',
-      nombre: this.form.value.textAreaComentario,
-      prioridad: 10,
-    }).subscribe((respuesta) => {
-      console.log('Comentario!!!');
-      // this.getUsuarios();
-      this.form.reset();
-    });
+  cambiarBoton() {
+    this.http
+      .put('http://localhost:8080/libro', {
+        id: this.libro.id,
+        milibro: !this.libro.milibro,
+      })
+      .subscribe((response) => {
+        this.libro.milibro = !this.libro.milibro;
+      });
   }
-  */
 }
 
 export interface Libro {
