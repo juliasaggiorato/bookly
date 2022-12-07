@@ -80,15 +80,26 @@ export class Libro1Page implements OnInit {
     this.formattedDate = this.datePipe.transform(this.date, 'MM/dd/yyyy');
   }
 
-  cambiarBoton() {
+  public cambiarBoton() {
+    console.log('antes de cambiar valor:', this.libro.milibro);
     this.http
       .put('http://localhost:8080/libro', {
-        id: this.libro.id,
-        milibro: !this.libro.milibro,
+        id: this.libro.id, // Replace with the ID of the boolean value you want to update
+        value: this.libro.milibro, // Replace with the new value for the boolean field
       })
       .subscribe((response) => {
         this.libro.milibro = !this.libro.milibro;
+        // Handle the response from the server
+        console.log('despues de cambiar valor:', this.libro.milibro);
       });
+
+    if (this.libro.milibro) {
+      this.textoBoton = 'Ya agregado ✓';
+      this.colorBoton = { 'background-color': '#FFFFFF', color: '#488bff' };
+    } else {
+      this.textoBoton = 'Agregar a mis libros';
+      this.colorBoton = { 'background-color': '#488bff', color: '#ffffff' };
+    }
   }
 }
 
