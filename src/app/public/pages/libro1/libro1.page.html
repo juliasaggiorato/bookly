@@ -22,48 +22,18 @@
     <p id="pags">Páginas: {{libro.paginas}}</p>
     <p id="publicacion">Publicación: {{formattedDate}}</p>
     <p id="isbn">ISBN: {{libro.isbn}}</p>
-
-    <ion-button id="agg"> {{textoBoton}} </ion-button>
+    <ion-button
+      id="agg"
+      (click)="cambiarBoton()"
+      [disabled]="value"
+      [ngStyle]="buttonStyles"
+    >
+      {{textoBoton}}
+    </ion-button>
   </div>
 
   <p id="descripcion">{{libro.descripcion}}</p>
   <div id="review">
     <ion-textarea placeholder="Escribe tu review"></ion-textarea>
   </div>
-
-  <!--
-
-    <div> 
-      <ion-card 
-      *ngFor="let usuario of usuarios"
-      style="position:relative; top:20px">
-      <ion-card-header>
-        <ion-card-subtitle style="color:black">{{usuario.email}}</ion-card-subtitle>
-        &nbsp;
-        <ion-card-subtitle style="color:grey">{{usuario.nombre}}</ion-card-subtitle>
-      </ion-card-header>  
-      <ion-card-content>
-        
-        </ion-card-content>
-      </ion-card>
-      
-    </div>
-
- 
-  
-  
-  <div>
-    <form [formGroup]="form" (submit)="enviarData()">
-      <div class="form-group">
-        <div for="commentArea"></div>
-      <textarea formControlName="textAreaComentario" class="text-comment" id="commentArea" rows="8"></textarea>
-      </div>
-      <div>
-        <ion-button fill="clear" color="medium" (click)="enviarData()"> Enviar </ion-button>
-      </div>
-    </form>
-  </div>
-
-  
--->
 </ion-content>
