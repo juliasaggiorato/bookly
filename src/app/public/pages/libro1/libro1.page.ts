@@ -87,7 +87,7 @@ export class Libro1Page implements OnInit {
         titulo: this.libro.titulo,
         descripcion: this.libro.descripcion,
         imagen: this.libro.imagen,
-        milibro: this.libro.milibro,
+        milibro: !this.libro.milibro,
       })
       .subscribe((response) => {
         this.libro.milibro = !this.libro.milibro;
