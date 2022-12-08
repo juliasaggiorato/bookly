@@ -64,41 +64,43 @@ export class Libro1Page implements OnInit {
       this.libroId = params['id'];
     });
     this.libro = this.libros.find((libro: Libro) => libro.id == this.libroId);
-    // muestra la cantidad de estrellas correspondientes segun el rating que saca de la base de datos
     this.estrellas = new Array(Math.round(this.libro.rating));
-    //cambia el boton segun la info que obtiene de la base de datos
-    if (this.libro.milibro) {
-      this.textoBoton = 'Ya agregado ✓';
-      this.colorBoton = { 'background-color': '#FFFFFF', color: '#488bff' };
-    } else {
-      this.textoBoton = 'Agregar a mis libros';
-      this.colorBoton = { 'background-color': '#488bff', color: '#ffffff' };
-    }
+    this.cambiarBoton();
   }
 
   public cambiarFormatoFecha(): void {
     this.formattedDate = this.datePipe.transform(this.date, 'MM/dd/yyyy');
   }
 
-  public cambiarBoton() {
+  public agregarMisLibros() {
     console.log('antes de cambiar valor:', this.libro.milibro);
     this.http
-      .put('http://localhost:8080/libro', {
-        id: this.libro.id, // Replace with the ID of the boolean value you want to update
-        value: this.libro.milibro, // Replace with the new value for the boolean field
+      .post('http://localhost:8080/libro', {
+        id: this.libro.id,
+        autor: this.libro.autor,
+        fechaPublicacion: this.libro.fechaPublicacion,
+        genero: this.libro.genero,
+        isbn: this.libro.isbn,
+        paginas: this.libro.paginas,
+        rating: this.libro.rating,
+        review: this.libro.review,
+        titulo: this.libro.titulo,
+        descripcion: this.libro.descripcion,
+        imagen: this.libro.imagen,
+        milibro: this.libro.milibro,
       })
       .subscribe((response) => {
         this.libro.milibro = !this.libro.milibro;
-        // Handle the response from the server
         console.log('despues de cambiar valor:', this.libro.milibro);
+        this.cambiarBoton();
       });
+  }
 
+  async cambiarBoton() {
     if (this.libro.milibro) {
       this.textoBoton = 'Ya agregado ✓';
-      this.colorBoton = { 'background-color': '#FFFFFF', color: '#488bff' };
     } else {
       this.textoBoton = 'Agregar a mis libros';
-      this.colorBoton = { 'background-color': '#488bff', color: '#ffffff' };
     }
   }
 }
