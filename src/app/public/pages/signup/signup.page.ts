@@ -23,7 +23,11 @@ export class SignupPage implements OnInit {
         email: this.email,
         password: this.contrasena,
       })
-      .subscribe((response) => {});
+      .subscribe((response) => {
+        this.usuario = this.usuario;
+        this.email = this.email;
+        this.contrasena = this.contrasena;
+      });
   }
 
   @ViewChild('#usuarioInput') usuarioInput: HTMLInputElement;
