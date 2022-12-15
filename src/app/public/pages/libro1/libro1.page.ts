@@ -30,8 +30,6 @@ export class Libro1Page implements OnInit {
 
   libros = [];
 
-  usuarios = [];
-
   libro: Libro = {
     id: 0,
     autor: '',
@@ -47,6 +45,14 @@ export class Libro1Page implements OnInit {
     milibro: false,
   };
 
+  public comentario: Comentario = {
+    id: 0,
+    usuario: '',
+    tituloLibro: '',
+    idLibro: 0,
+    comentario: '',
+  };
+
   public libroId: number;
   public formattedDate;
   estrellas: any[] = [];
@@ -56,12 +62,13 @@ export class Libro1Page implements OnInit {
   ngOnInit() {
     this.getLibroPorId();
     this.cambiarFormatoFecha();
+    this.cargarComentarios();
 
     this.form = this.fb.group({
-      textAreaComentario: ['']
-  });
+      textAreaComentario: [''],
+    });
   }
-  
+
   async getLibroPorId() {
     this.libros = await this.librosService.getLibros();
     this.activatedRoute.params.subscribe((params) => {
@@ -93,6 +100,7 @@ export class Libro1Page implements OnInit {
         imagen: this.libro.imagen,
         milibro: !this.libro.milibro,
       })
+
       .subscribe((response) => {
         this.libro.milibro = !this.libro.milibro;
         console.log('despues de cambiar valor:', this.libro.milibro);
@@ -108,23 +116,34 @@ export class Libro1Page implements OnInit {
     }
   }
 
-public enviarData() {
-  const requestBody: any = {
-    text:this.form.value.textAreaComentario
-  };
-  
-this.ReviewService.post('http://localhost:8080/usuario', requestBody)
+  async getComentarios() {
+    const res = await fetch('http://localhost:8080/comentario');
+    const resjson = (await res).json();
+    return resjson;
+  }
 
-  .subscribe((response) => { 
-    console.log('Comentario enviado!');
-    this.form.reset();
-    this.cargarComentarios();
-  })
-}
-public cargarComentarios() {
-  
-}
+  async cargarComentarios() {
+    this.comentarios = await this.getComentarios();
+    console.table(this.comentarios);
+    return this.comentarios.filter(
+      (comentario) => this.comentario.idLibro === this.libro.id
+    );
+  }
 
+  public enviarData() {
+    this.http
+      .post('http://localhost:8080/comentario', {
+        usuario: 'Miranda Venuti',
+        tituloLibro: this.libro.titulo,
+        idLibro: this.libro.id,
+        comentario: this.form.value.textAreaComentario,
+      })
+      .subscribe((response) => {
+        console.log('Comentario enviado!');
+        this.form.reset();
+        this.getComentarios();
+      });
+  }
 }
 
 export interface Libro {
@@ -140,4 +159,12 @@ export interface Libro {
   descripcion: string;
   imagen: string;
   milibro: boolean;
+}
+
+export interface Comentario {
+  id: number;
+  usuario: string;
+  tituloLibro: string;
+  idLibro: number;
+  comentario: string;
 }

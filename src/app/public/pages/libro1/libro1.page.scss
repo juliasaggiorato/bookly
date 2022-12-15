@@ -54,6 +54,13 @@ p {
 
   color: #666666;
 }
+h3 {
+  margin-top: 32px;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 h4 {
   margin-left: 20px;
   font-size: 14px;
@@ -167,10 +174,8 @@ h5 {
   width: 50px;
   height: 23px;
   left: 288px;
-  top: 535px;
-
-  /* Primary */
-
+  top: 500px;
+  margin-top: 10px;
   background: #3880ff;
   border-radius: 4px;
 }
@@ -184,20 +189,7 @@ h5 {
 #review {
   width: 320px;
   height: 100px;
-  border: 1px solid #666666;
-  border-radius: 4px;
   margin: 5px;
   margin-left: 20px;
+  margin-top: 15px;
 }
-
-/*
-
-#fotoperfil{
-  font-size: 50px;
-  margin-left: 15px;
-}
-
-#h6{
-  margin-left: 200px;
-}
-*/

@@ -2,26 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ReviewService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  public get(url:string){
+  public get(url: string) {
     return this.http.get(url);
   }
 
-
-  public post(url:string, body: undefined){ 
-    return this.http.post(url,body);
+  public post(url: string, body: undefined) {
+    return this.http.post(url, body);
   }
-  async getUsuarios() {
-    const res = await fetch('http://localhost:8080/usuario');
+  async getComentarios() {
+    const res = await fetch('http://localhost:8080/comentario');
     const resjson = (await res).json();
     return resjson;
   }
 }
-  
-  
-

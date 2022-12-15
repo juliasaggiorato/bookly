@@ -33,13 +33,19 @@
   </div>
 
   <p id="descripcion">{{libro.descripcion}}</p>
-<form [formGroup]="form"(submit)="enviarData()">
-  <div id="review">
-    <ion-textarea formControlName="textAreaComentario" placeholder="Escribe tu review"></ion-textarea>
-    <br />
-    <button class="button">Enviar</button>
+  <form [formGroup]="form" (submit)="enviarData()">
+    <ion-card id="review">
+      <ion-textarea
+        formControlName="textAreaComentario"
+        placeholder="Escribe tu review"
+      ></ion-textarea>
+    </ion-card>
+
+    <ion-button id="publicar">Publicar</ion-button>
     <h3>Otras reviews</h3>
-    <p>{{libro.review}}</p>
-  </div>
-</form>
+    <div *ngFor="let comentario of Comentarios">
+      <p>{{comentario.usuario}}</p>
+      <p>{{comentario.comentario}}</p>
+    </div>
+  </form>
 </ion-content>
