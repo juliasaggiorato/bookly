@@ -1,12 +1,16 @@
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+
 import { DatePipe } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +20,7 @@ import { DatePipe } from '@angular/common';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     DatePipe,
@@ -24,3 +29,4 @@ import { DatePipe } from '@angular/common';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+export class MyModule {}
