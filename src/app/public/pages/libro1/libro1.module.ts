@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+
 
 import { IonicModule } from '@ionic/angular';
 
 import { Libro1PageRoutingModule } from './libro1-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Libro1Page } from './libro1.page';
 
@@ -13,8 +14,10 @@ import { Libro1Page } from './libro1.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    Libro1PageRoutingModule
+    Libro1PageRoutingModule,
+    ReactiveFormsModule,
   ],
   declarations: [Libro1Page]
 })
 export class Libro1PageModule {}
+export class MyModule {}

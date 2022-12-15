@@ -56,8 +56,12 @@ export class Libro1Page implements OnInit {
   ngOnInit() {
     this.getLibroPorId();
     this.cambiarFormatoFecha();
-  }
 
+    this.form = this.fb.group({
+      textAreaComentario: ['']
+  });
+  }
+  
   async getLibroPorId() {
     this.libros = await this.librosService.getLibros();
     this.activatedRoute.params.subscribe((params) => {
@@ -103,6 +107,24 @@ export class Libro1Page implements OnInit {
       this.textoBoton = 'Agregar a mis libros';
     }
   }
+
+public enviarData() {
+  const requestBody: any = {
+    text:this.form.value.textAreaComentario
+  };
+  
+this.ReviewService.post('http://localhost:8080/usuario', requestBody)
+
+  .subscribe((response) => { 
+    console.log('Comentario enviado!');
+    this.form.reset();
+    this.cargarComentarios();
+  })
+}
+public cargarComentarios() {
+  
+}
+
 }
 
 export interface Libro {

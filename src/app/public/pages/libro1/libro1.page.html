@@ -33,10 +33,13 @@
   </div>
 
   <p id="descripcion">{{libro.descripcion}}</p>
+<form [formGroup]="form"(submit)="enviarData()">
   <div id="review">
-    <ion-textarea placeholder="Escribe tu review"></ion-textarea>
+    <ion-textarea formControlName="textAreaComentario" placeholder="Escribe tu review"></ion-textarea>
     <br />
+    <button class="button">Enviar</button>
     <h3>Otras reviews</h3>
     <p>{{libro.review}}</p>
   </div>
+</form>
 </ion-content>
