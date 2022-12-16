@@ -43,9 +43,9 @@
 
     <ion-button id="publicar">Publicar</ion-button>
     <h3>Otras reviews</h3>
-    <div *ngFor="let comentario of Comentarios">
-      <p>{{comentario.usuario}}</p>
-      <p>{{comentario.comentario}}</p>
-    </div>
+    <p *ngFor="let comentario of comentarios">
+      {{comentario.usuario}} <br />
+      {{comentario.comentario}}
+    </p>
   </form>
 </ion-content>

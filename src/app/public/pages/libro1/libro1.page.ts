@@ -12,13 +12,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./libro1.page.scss'],
 })
 export class Libro1Page implements OnInit {
-  public respuesta: any = [];
-  public comentarios: any = [];
-  comentarioText: string;
-  public form: FormGroup;
-  formBuilder: any;
-  public colorBoton: any = {};
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private librosService: LibrosService,
@@ -28,7 +21,18 @@ export class Libro1Page implements OnInit {
     private http: HttpClient
   ) {}
 
+  public respuesta: any = [];
   libros = [];
+  comentarios = [];
+  comentarioText: string;
+  public form: FormGroup;
+  formBuilder: any;
+  public colorBoton: any = {};
+  public libroId: number;
+  public formattedDate;
+  estrellas: any[] = [];
+  public textoBoton = '';
+  comentariosPorId = [];
 
   libro: Libro = {
     id: 0,
@@ -53,10 +57,6 @@ export class Libro1Page implements OnInit {
     comentario: '',
   };
 
-  public libroId: number;
-  public formattedDate;
-  estrellas: any[] = [];
-  public textoBoton = '';
   date: Date = this.libro.fechaPublicacion;
 
   ngOnInit() {
@@ -100,7 +100,6 @@ export class Libro1Page implements OnInit {
         imagen: this.libro.imagen,
         milibro: !this.libro.milibro,
       })
-
       .subscribe((response) => {
         this.libro.milibro = !this.libro.milibro;
         console.log('despues de cambiar valor:', this.libro.milibro);
@@ -124,7 +123,10 @@ export class Libro1Page implements OnInit {
 
   async cargarComentarios() {
     this.comentarios = await this.getComentarios();
-    console.table(this.comentarios);
+    this.comentariosPorId = this.getComentariosPorId();
+  }
+
+  getComentariosPorId() {
     return this.comentarios.filter(
       (comentario) => this.comentario.idLibro === this.libro.id
     );
@@ -141,7 +143,7 @@ export class Libro1Page implements OnInit {
       .subscribe((response) => {
         console.log('Comentario enviado!');
         this.form.reset();
-        this.getComentarios();
+        this.cargarComentarios();
       });
   }
 }

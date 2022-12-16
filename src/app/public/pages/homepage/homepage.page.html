@@ -17,7 +17,7 @@
 
   <ion-searchbar placeholder="Libro, Autor o ISBN"></ion-searchbar>
   <h2>Mis Libros</h2>
-   <div>
+  <div>
     <img
       *ngFor="let libro of librosMisLibros"
       src="{{libro.imagen}}"
@@ -30,65 +30,65 @@
   <h2>Fantasía</h2>
   <div>
     <img
-    *ngFor="let libro of librosFantasia"
-    src="{{libro.imagen}}"
-    [routerLink]="['/libro',libro.id]"
-    routerLinkActive="router-link-active"
-    alt="{{libro.titulo}}"
-  />
+      *ngFor="let libro of librosFantasia"
+      src="{{libro.imagen}}"
+      [routerLink]="['/libro',libro.id]"
+      routerLinkActive="router-link-active"
+      alt="{{libro.titulo}}"
+    />
   </div>
 
   <h2>Romance</h2>
   <div>
     <img
-    *ngFor="let libro of librosRomance"
-    src="{{libro.imagen}}"
-    [routerLink]="['/libro',libro.id]"
-    routerLinkActive="router-link-active"
-    alt="{{libro.titulo}}"
-  />
+      *ngFor="let libro of librosRomance"
+      src="{{libro.imagen}}"
+      [routerLink]="['/libro',libro.id]"
+      routerLinkActive="router-link-active"
+      alt="{{libro.titulo}}"
+    />
   </div>
 
   <h2>Distopías</h2>
   <div>
     <img
-    *ngFor="let libro of librosDistopia"
-    src="{{libro.imagen}}"
-    [routerLink]="['/libro',libro.id]"
-    routerLinkActive="router-link-active"
-    alt="{{libro.titulo}}"
-  />
+      *ngFor="let libro of librosDistopia"
+      src="{{libro.imagen}}"
+      [routerLink]="['/libro',libro.id]"
+      routerLinkActive="router-link-active"
+      alt="{{libro.titulo}}"
+    />
   </div>
   <h2>Niños</h2>
   <div>
     <img
-    *ngFor="let libro of librosNinos"
-    src="{{libro.imagen}}"
-    [routerLink]="['/libro',libro.id]"
-    routerLinkActive="router-link-active"
-    alt="{{libro.titulo}}"
-  />
+      *ngFor="let libro of librosNinos"
+      src="{{libro.imagen}}"
+      [routerLink]="['/libro',libro.id]"
+      routerLinkActive="router-link-active"
+      alt="{{libro.titulo}}"
+    />
   </div>
 
   <h2>Autoayuda</h2>
   <div>
     <img
-    *ngFor="let libro of librosAutoayuda"
-    src="{{libro.imagen}}"
-    [routerLink]="['/libro',libro.id]"
-    routerLinkActive="router-link-active"
-    alt="{{libro.titulo}}"
-  />
+      *ngFor="let libro of librosAutoayuda"
+      src="{{libro.imagen}}"
+      [routerLink]="['/libro',libro.id]"
+      routerLinkActive="router-link-active"
+      alt="{{libro.titulo}}"
+    />
   </div>
 
   <h2>Clasicos</h2>
   <div>
     <img
-    *ngFor="let libro of librosClasicos"
-    src="{{libro.imagen}}"
-    [routerLink]="['/libro',libro.id]"
-    routerLinkActive="router-link-active"
-    alt="{{libro.titulo}}"
-  />
+      *ngFor="let libro of librosClasicos"
+      src="{{libro.imagen}}"
+      [routerLink]="['/libro',libro.id]"
+      routerLinkActive="router-link-active"
+      alt="{{libro.titulo}}"
+    />
   </div>
 </ion-content>
