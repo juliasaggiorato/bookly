@@ -41,11 +41,13 @@
       ></ion-textarea>
     </ion-card>
 
-    <ion-button id="publicar">Publicar</ion-button>
+    <ion-button id="publicar" (click)="enviarData()">Publicar</ion-button>
     <h3>Otras reviews</h3>
-    <p *ngFor="let comentario of comentarios">
-      {{comentario.usuario}} <br />
-      {{comentario.comentario}}
-    </p>
+    <div id="otrasReviews">
+      <p *ngFor="let comentario of comentarios">
+        {{comentario.usuario}} <br />
+        {{comentario.comentario}}
+      </p>
+    </div>
   </form>
 </ion-content>
