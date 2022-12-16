@@ -130,7 +130,7 @@ export class Libro1Page implements OnInit {
         idLibro: this.libro.id,
         comentario: this.form.value.textAreaComentario,
         tituloLibro: this.libro.titulo,
-        usuario: 'Julieta Viceconti',
+        usuario: 'Julia Saggiorato',
       })
       .subscribe((response) => {
         this.form.reset();
