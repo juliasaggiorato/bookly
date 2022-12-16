@@ -44,7 +44,7 @@
     <ion-button id="publicar" (click)="enviarData()">Publicar</ion-button>
     <h3>Otras reviews</h3>
     <div id="otrasReviews">
-      <p *ngFor="let comentario of comentarios">
+      <p *ngFor="let comentario of comentariosPorId">
         {{comentario.usuario}} <br />
         {{comentario.comentario}}
       </p>

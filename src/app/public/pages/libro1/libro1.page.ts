@@ -128,7 +128,7 @@ export class Libro1Page implements OnInit {
 
   getComentariosPorId() {
     return this.comentarios.filter(
-      (comentario) => this.comentario.idLibro === this.libro.id
+      (comentario) => comentario.idLibro === this.libro.id
     );
   }
 
@@ -141,7 +141,6 @@ export class Libro1Page implements OnInit {
         comentario: this.form.value.textAreaComentario,
       })
       .subscribe((response) => {
-        console.log('Comentario enviado!');
         this.form.reset();
         this.cargarComentarios();
       });
