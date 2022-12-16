@@ -1,4 +1,28 @@
 <ion-content>
   <h1>Settings</h1>
-  <p [routerLink]="['']" routerLinkActive="router-link-active">Cerrar sesión</p>
+  <ion-list>
+    <ion-item>
+      <ion-label>Cuenta</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Perfil</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Privacidad</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Notificaciones</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ayuda</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label
+        [routerLink]="['']"
+        routerLinkActive="router-link-active"
+        id="cerrarSesion"
+        >Cerrar sesión</ion-label
+      >
+    </ion-item>
+  </ion-list>
 </ion-content>
