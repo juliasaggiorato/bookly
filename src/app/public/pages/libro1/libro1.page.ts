@@ -119,11 +119,6 @@ export class Libro1Page implements OnInit {
   }
 
   getComentariosPorId() {
-    console.log(
-      this.listaComentarios.filter(
-        (comentario) => comentario.idLibro === this.libro.id
-      )
-    );
     return this.listaComentarios.filter(
       (comentario) => comentario.idLibro === this.libro.id
     );
@@ -135,7 +130,7 @@ export class Libro1Page implements OnInit {
         idLibro: this.libro.id,
         comentario: this.form.value.textAreaComentario,
         tituloLibro: this.libro.titulo,
-        usuario: 'María Perez',
+        usuario: 'Julieta Viceconti',
       })
       .subscribe((response) => {
         this.form.reset();

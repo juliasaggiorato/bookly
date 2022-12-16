@@ -16,7 +16,6 @@ export class PerfilPage implements OnInit {
   }
   async getLibros() {
     this.libros = await this.librosService.getLibros();
-    console.log(this.libros);
     this.librosMisLibros = this.getLibrosMisLibros();
   }
   getLibrosMisLibros() {
