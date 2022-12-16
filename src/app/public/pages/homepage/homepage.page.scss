@@ -1,6 +1,6 @@
 ion-content {
   display: flex;
-  background-color: #C5DCFF;
+  background-color: #c5dcff;
 }
 
 img {
@@ -8,6 +8,11 @@ img {
   height: 130px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin: 8px 8px 8px 8px;
+}
+#perfil {
+  margin-left: 12px;
+  font-size: 24px;
+  margin-top: 5px;
 }
 
 img:hover {
@@ -27,8 +32,8 @@ ion-icon:hover {
   filter: alpha(opacity=40);
 }
 
-#settings{
-  margin-left:260px ;
+#settings {
+  margin-left: 270px;
 }
 h2 {
   font-size: 20px;

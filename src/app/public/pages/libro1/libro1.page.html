@@ -5,6 +5,7 @@
         name="chevron-back"
         [routerLink]="['/homepage']"
         routerLinkActive="router-link-active"
+        id="flechaAtras"
       ></ion-icon>
     </ion-toolbar>
   </ion-header>
@@ -31,7 +32,6 @@
       {{textoBoton}}
     </ion-button>
   </div>
-
   <p id="descripcion">{{libro.descripcion}}</p>
   <form [formGroup]="form" (submit)="enviarData()">
     <ion-card id="review">
@@ -45,7 +45,7 @@
     <h3>Otras reviews</h3>
 
     <div id="otrasReviews">
-      <ion-card *ngFor="let comentario of comentariosPorId">
+      <ion-card *ngFor="let comentario of comentariosPorId" color="">
         <ion-card-content>
           <ion-card-title style="font-size: 15px"
             >{{comentario.usuario}}</ion-card-title
