@@ -7,30 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-  constructor(private http: HttpClient) {}
-  usuario: string = 'Usuario';
-  email: string = 'Email';
-  contrasena: string = 'Contraseña';
+  constructor() {}
 
-  ngOnInit() {
-    this.usuario = this.usuarioInput.value;
-    this.email = this.emailInput.value;
-    this.contrasena = this.contrasenaInput.value;
-
-    this.http
-      .post('http://localhost:8080/usuario', {
-        nombre: this.usuario,
-        email: this.email,
-        password: this.contrasena,
-      })
-      .subscribe((response) => {
-        this.usuario = this.usuario;
-        this.email = this.email;
-        this.contrasena = this.contrasena;
-      });
-  }
-
-  @ViewChild('#usuarioInput') usuarioInput: HTMLInputElement;
-  @ViewChild('#emailInput') emailInput: HTMLInputElement;
-  @ViewChild('#contrasenaInput') contrasenaInput: HTMLInputElement;
+  ngOnInit() {}
 }

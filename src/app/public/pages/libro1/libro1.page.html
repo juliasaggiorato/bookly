@@ -43,11 +43,17 @@
 
     <ion-button id="publicar" (click)="enviarData()">Publicar</ion-button>
     <h3>Otras reviews</h3>
+
     <div id="otrasReviews">
-      <p *ngFor="let comentario of comentariosPorId">
-        {{comentario.usuario}} <br />
-        {{comentario.comentario}}
-      </p>
+      <ion-card *ngFor="let comentario of comentariosPorId">
+        <ion-card-content>
+          <ion-card-title style="font-size: 15px"
+            >{{comentario.usuario}}</ion-card-title
+          >
+
+          {{comentario.comentario}}
+        </ion-card-content>
+      </ion-card>
     </div>
   </form>
 </ion-content>
