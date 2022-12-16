@@ -12,6 +12,10 @@ export class LibrosService {
     return resjson;
   }
 
+  public get(url: string) {
+    return this.http.get(url);
+  }
+
   public post(url: string, body) {
     return this.http.post(url, body);
   }

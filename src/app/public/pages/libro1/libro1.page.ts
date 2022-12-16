@@ -16,14 +16,14 @@ export class Libro1Page implements OnInit {
     private activatedRoute: ActivatedRoute,
     private librosService: LibrosService,
     private fb: FormBuilder,
-    private ReviewService: ReviewService,
+    private reviewService: ReviewService,
     private datePipe: DatePipe,
     private http: HttpClient
   ) {}
 
   public respuesta: any = [];
   libros = [];
-  comentarios = [];
+  listaComentarios: Comentario[] = [];
   comentarioText: string;
   public form: FormGroup;
   formBuilder: any;
@@ -51,10 +51,10 @@ export class Libro1Page implements OnInit {
 
   public comentario: Comentario = {
     id: 0,
-    usuario: '',
-    tituloLibro: '',
-    idLibro: 0,
+    idLibro: 15,
     comentario: '',
+    tituloLibro: '',
+    usuario: '',
   };
 
   date: Date = this.libro.fechaPublicacion;
@@ -84,7 +84,6 @@ export class Libro1Page implements OnInit {
   }
 
   public agregarMisLibros() {
-    console.log('antes de cambiar valor:', this.libro.milibro);
     this.http
       .post('http://localhost:8080/libro', {
         id: this.libro.id,
@@ -102,7 +101,6 @@ export class Libro1Page implements OnInit {
       })
       .subscribe((response) => {
         this.libro.milibro = !this.libro.milibro;
-        console.log('despues de cambiar valor:', this.libro.milibro);
         this.cambiarBoton();
       });
   }
@@ -115,30 +113,29 @@ export class Libro1Page implements OnInit {
     }
   }
 
-  async getComentarios() {
-    const res = await fetch('http://localhost:8080/comentario');
-    const resjson = (await res).json();
-    return resjson;
-  }
-
   async cargarComentarios() {
-    this.comentarios = await this.getComentarios();
+    this.listaComentarios = await this.reviewService.getComentarios();
     this.comentariosPorId = this.getComentariosPorId();
   }
 
   getComentariosPorId() {
-    return this.comentarios.filter(
+    console.log(
+      this.listaComentarios.filter(
+        (comentario) => comentario.idLibro === this.libro.id
+      )
+    );
+    return this.listaComentarios.filter(
       (comentario) => comentario.idLibro === this.libro.id
     );
   }
 
-  public enviarData() {
+  public enviarData(): void {
     this.http
       .post('http://localhost:8080/comentario', {
-        usuario: 'Miranda Venuti',
-        tituloLibro: this.libro.titulo,
         idLibro: this.libro.id,
         comentario: this.form.value.textAreaComentario,
+        tituloLibro: this.libro.titulo,
+        usuario: 'Miranda Venuti',
       })
       .subscribe((response) => {
         this.form.reset();
@@ -164,8 +161,8 @@ export interface Libro {
 
 export interface Comentario {
   id: number;
-  usuario: string;
-  tituloLibro: string;
   idLibro: number;
   comentario: string;
+  tituloLibro: string;
+  usuario: string;
 }
